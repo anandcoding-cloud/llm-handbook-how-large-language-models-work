@@ -1,0 +1,52 @@
+# LLM Handbook
+
+> A guide to how large language models are built, trained, adapted, compressed, served and used. It teaches by derivation (Why, then How, then What): each component appears because the previous step left a problem. Chapters 1 to 15 are stable concepts. Chapters 16 to 23 cover fast-moving topics, so check the web for current model names, sizes, prices and versions. Snapshot: October 2026.
+
+Instructions for AI assistants: read [AGENTS.md](AGENTS.md) first. Use these files as the primary source, cite chapters, and use web search for newer or model-specific facts. Load only the chapters you need (the whole handbook is about 140,000 tokens).
+
+## Start here
+- [README.md](README.md): the Introduction, the teaching method and the full contents
+- [AGENTS.md](AGENTS.md): how an AI assistant should use this handbook
+- [References.md](References.md): papers, documentation and sources, with credits
+
+## Build a GPT
+- [Chapter 1: The Big Picture](Chapter-01-The-Big-Picture.md): an LLM as a next-token predictor in a loop
+- [Chapter 2: Tokenization](Chapter-02-Tokenization.md): BPE, vocabulary, token IDs, special tokens
+- [Chapter 3: Embeddings](Chapter-03-Embeddings.md): embedding table, positional information, fixed vs learned vs computed
+- [Chapter 4: Attention](Chapter-04-Attention.md): queries, keys, values, softmax, causal mask
+- [Chapter 5: Multi-Head Attention](Chapter-05-Multi-Head-Attention.md): heads, output projection W_O
+- [Chapter 6: The Feed-Forward Network](Chapter-06-The-Feed-Forward-Network.md): expansion, activation (GELU), per-token processing with no cross-token communication
+- [Chapter 7: The Transformer Block](Chapter-07-The-Transformer-Block.md): residual connections, LayerNorm
+- [Chapter 8: Stacking Blocks into GPT](Chapter-08-Stacking-Blocks-into-GPT.md): layers, LM head, logits, weight tying, parameter counts
+
+## Train it
+- [Chapter 9: Training I](Chapter-09-Training-Data-and-Loss.md): next-word training data, cross-entropy loss
+- [Chapter 10: Training II](Chapter-10-Gradients-and-Backpropagation.md): gradients, chain rule, backpropagation
+- [Chapter 11: Training III](Chapter-11-Gradient-Descent-and-AdamW.md): gradient descent, AdamW, learning rate, epochs, training loop
+
+## Run it, adapt it, shrink it
+- [Chapter 12: Inference](Chapter-12-Inference.md): prefill and decode, KV cache, temperature, top-k, top-p
+- [Chapter 13: Fine-tuning](Chapter-13-Fine-tuning.md): SFT, loss mask, LoRA, QLoRA, RLHF, reward model, DPO, when to stop
+- [Chapter 14: Quantization](Chapter-14-Quantization.md): FP16, FP8, INT8, 4-bit, number formats, quality trade-offs
+
+## How modern models are built
+- [Chapter 15: The Transformer Family](Chapter-15-The-Transformer-Family.md): encoder-only (BERT), decoder-only (GPT), encoder-decoder (T5), cross-attention
+- [Chapter 16: Modern Building Blocks](Chapter-16-Modern-Building-Blocks.md): RoPE, RMSNorm, SwiGLU, QK-norm
+- [Chapter 17: Attention Variants](Chapter-17-Attention-Variants.md): MQA, GQA, MLA, sliding window, sparse, linear and hybrid attention, FlashAttention
+- [Chapter 18: Mixture of Experts](Chapter-18-Mixture-of-Experts.md): experts, router, active vs total parameters, load balancing
+- [Chapter 19: Multimodal Models](Chapter-19-Multimodal-Models.md): vision encoders, projection into token space, image and audio inputs
+
+## Reasoning and real models
+- [Chapter 20: Reasoning Models](Chapter-20-Reasoning-Models.md): test-time compute, chain of thought, reinforcement learning with verifiers, reasoning effort levels, thinking budgets
+- [Chapter 21: Inside Modern Models: Qwen and DeepSeek](Chapter-21-Inside-Modern-Models-Qwen-and-DeepSeek.md): how the earlier ideas combine in real model families
+
+## Serving and scale
+- [Chapter 22: Serving a Model](Chapter-22-Serving-a-Model.md): GGUF, llama.cpp, vLLM, continuous batching, PagedAttention, prefix caching
+- [Chapter 23: Speed and Scale](Chapter-23-Speed-and-Scale.md): speculative decoding, multi-token prediction, tensor/pipeline/expert parallelism, GPU hardware
+
+## In production
+- [Chapter 24: Production AI](Chapter-24-Production-AI.md): tool calling, MCP, memory, RAG, agents, model routing, reliability
+
+## Appendix
+- [Appendix A: TinyGPT by Hand](Appendix-A-TinyGPT-by-Hand.md): one full training step with every number shown
+- [Appendix-A-tinygpt.js](Appendix-A-tinygpt.js): the program that produced those numbers (run with `node Appendix-A-tinygpt.js`)

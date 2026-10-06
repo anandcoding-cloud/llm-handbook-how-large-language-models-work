@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this handbook, please cite it as below."
+title: "The LLM Handbook: How Large Language Models Work, from Tokenization to Production"
+authors:
+  - given-names: "Anand"
+repository-code: "https://github.com/anandcoding-cloud/llm-handbook-how-large-language-models-work"
+url: "https://github.com/anandcoding-cloud/llm-handbook-how-large-language-models-work"
+license: CC-BY-4.0
+keywords:
+  - large language models
+  - LLM
+  - transformers
+  - attention
+  - fine-tuning
+  - quantization
+  - mixture of experts
+  - reasoning models
+  - handbook
